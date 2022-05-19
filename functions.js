@@ -28,12 +28,17 @@ export function greetUsersOverAge60(customers) {
 
 /* 
 Output: 
-4532
+2125
 */
 
 export function addAllAges(customers) {
     // reduce through the customers to make a sum
-    return true;
+    const sum = customers.reduce((acc, customer) => {
+        acc += customer.age;
+
+        return acc;
+    }, 0);
+    return sum;
 }
 
 /* 

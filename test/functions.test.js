@@ -2,6 +2,7 @@
 import { 
     greetUsers,
     greetUsersOverAge60,
+    addAllAges
 } from '../functions.js';
 import customers from './data.js';
 
@@ -86,12 +87,12 @@ test('greetUsersOverAge60', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-skip('addAllAges', (expect) => {
-    const expected = true;
+test('addAllAges', (expect) => {
+    const expected = 2125;
 
-    const actual = true;
+    const actual = addAllAges(customers);
 
-    expect.equal(actual, expected);
+    expect.deepEqual(actual, expected);
 });
 
 
