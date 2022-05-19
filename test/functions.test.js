@@ -2,7 +2,8 @@
 import { 
     greetUsers,
     greetUsersOverAge60,
-    addAllAges
+    addAllAges,
+    getAverageCoolFactor
 } from '../functions.js';
 import customers from './data.js';
 
@@ -96,10 +97,10 @@ test('addAllAges', (expect) => {
 });
 
 
-skip('getAverageCoolFactor', (expect) => {
-    const expected = true;
+test('getAverageCoolFactor', (expect) => {
+    const expected = 5.08;
 
-    const actual = true;
+    const actual = getAverageCoolFactor(customers);
 
     expect.equal(actual, expected);
 });
