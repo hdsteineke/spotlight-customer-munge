@@ -133,10 +133,13 @@ test('getGenderBreakdownOfFordOwners', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-skip('getGenderBreakdownOfEachCar', (expect) => {
-    const expected = true;
+test('getGenderBreakdownOfEachCar', (expect) => {
+    const expected = {
+        'Female': 1,
+        'Male': 2
+    };
 
-    const actual = true;
+    const actual = getGenderBreakdownOfEachCar(customers);
 
     expect.equal(actual, expected);
 });
