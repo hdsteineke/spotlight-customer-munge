@@ -128,10 +128,10 @@ export function getGenderBreakdownOfEachCar(customers) {
     const cars = customers.reduce((acc, { car_make }) => {
 
         const genders = customers.reduce((acc, { gender }) => {
-            if (!acc[gender]) {
-                acc[gender] = 1
+            if(!acc[gender]) {
+                acc[gender] = 1;
             } else {
-                acc[gender]++
+                acc[gender]++;
             }
             return acc;
         }, {});
@@ -156,7 +156,19 @@ Output:
 
 
 export function getAllCoolFactorsOfEachCar(customers) {
-    return true;
+    const cars = customers.reduce((acc, { car_make }) => {
+
+        const coolFactor = customers.reduce((acc, { cool_factor }) => {
+            if(cool_factor) {
+                acc.push(cool_factor);
+            }
+            return acc;
+        }, []);
+        
+        return { ... acc, [car_make]: coolFactor };  
+    }, {});
+
+    return cars;
 }
 
 /////////////////////////////// STRETCH GOALS ///////////////////////////////////////
